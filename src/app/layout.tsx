@@ -39,6 +39,7 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className="flex h-full flex-col">{children}</body>
     </html>
   )

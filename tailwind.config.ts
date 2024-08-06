@@ -31,10 +31,17 @@ export default {
       maxWidth: {
         '2xl': '40rem',
       },
+      animation: {
+        wave: 'water-wave 2s cubic-bezier(0, 0, 0.46, 1.21) infinite',
+      },
       keyframes: {
-        dash: {
+        'dash-stroke': {
           '0%': { 'stroke-dashoffset': '383px' },
           '100%': { 'stroke-dashoffset': '0px' },
+        },
+        'water-wave': {
+          '75%': { transform: 'scale(1.3)', opacity: '0' },
+          '100%': { transform: 'scale(1.3)', opacity: '0' },
         },
       },
     },

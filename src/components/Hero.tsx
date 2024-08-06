@@ -26,7 +26,7 @@ export function Hero() {
             preserveAspectRatio="none"
           >
             <path
-              className="relative animate-[dash_1s_linear]"
+              className="relative animate-[dash-stroke_1s_linear]"
               style={{
                 strokeDasharray: 366,
                 strokeDashoffset: 0,

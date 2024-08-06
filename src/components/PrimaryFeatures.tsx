@@ -7,36 +7,33 @@ import clsx from 'clsx'
 
 import { BlurDotBg } from '@/lib/blurDotBg'
 import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-features.png'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import screenshotMainInterface from '@/images/screenshots/main-interface.png'
+import screenshotMainInterfaceNoSidebar from '@/images/screenshots/main-interface-no-sidebar.png'
 
 const features = [
   {
     title: 'Quality Assurance',
     description:
       'Automatically capture and convert user scenarios into test cases with AREX. Continuous updates and maintenance of these cases ensure top-notch application quality at release.',
-    image: screenshotExpenses,
+    image: screenshotMainInterface,
   },
   {
     title: 'Cost Saving',
     description:
       'AREX streamlines API quality automation for faster releases, reducing manual test creation and maintenance. Our SaaS solution further cuts costs by eliminating the need for specialized hardware and IT support.',
-    image: screenshotPayroll,
+    image: screenshotMainInterface,
   },
   {
     title: 'Speedy Releases',
     description:
       'With AREX, bypass complex manual testing. Accelerate code deployment by running multiple tests in parallel across cloud infrastructures.',
-    image: screenshotVatReturns,
+    image: screenshotMainInterface,
   },
   {
     title: 'Codeless',
     description:
       'AREX enables users to automate API tests without writing code, making it easy for non-technical business users and test engineers alike.',
-    image: screenshotReporting,
+    image: screenshotMainInterface,
   },
 ]
 
@@ -70,16 +67,8 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-[#164be9] pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-[#164be9] pb-12 pt-20 sm:pb-8"
     >
-      {/*<Image*/}
-      {/*  className="absolute left-1/2 top-1/2 h-full max-w-none translate-x-[-50%] translate-y-[-50%] scale-110"*/}
-      {/*  src={backgroundImage}*/}
-      {/*  alt=""*/}
-      {/*  width={1600}*/}
-      {/*  height={1200}*/}
-      {/*  unoptimized*/}
-      {/*/>*/}
       <Container className="relative z-10">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -102,7 +91,7 @@ export function PrimaryFeatures() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
+                        'group relative mr-4 rounded-full px-4 py-1 lg:my-2 lg:rounded-xl lg:p-4',
                         selectedIndex === featureIndex
                           ? 'bg-white backdrop-blur lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
                           : 'hover:bg-white/10 lg:hover:bg-white/5',
@@ -144,13 +133,13 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                    <div className="relative left-[-7.1%] top-[-48px] mt-10 w-[114.2%] overflow-hidden rounded-xl bg-transparent lg:top-4 lg:mt-0 lg:w-[60em]">
                       <Image
                         className="w-full"
-                        src={feature.image}
+                        src={screenshotMainInterfaceNoSidebar}
                         alt=""
                         priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                        sizes="(min-width: 640px) 100vw, 35rem"
                       />
                     </div>
                   </TabPanel>
