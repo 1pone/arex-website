@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-call-to-action.jpg'
+import { URL_AREX_CONSOLE } from '@/constant'
 
 export function CallToAction() {
   return (
@@ -26,7 +27,7 @@ export function CallToAction() {
           <p className="mt-4 text-lg tracking-tight text-white">
             It’s time to take control of your testing processes with AREX.
           </p>
-          <Button href="/register" color="white" className="mt-10">
+          <Button href={URL_AREX_CONSOLE} color="white" className="mt-10">
             Get 6 months free
           </Button>
         </div>

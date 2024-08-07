@@ -43,7 +43,7 @@ export function PrimaryFeatures() {
   )
 
   useEffect(() => {
-    let colorbg = new BlurDotBg({
+    new BlurDotBg({
       dom: 'features',
       colors: ['#0d31a2', '#ffb400', '#0c1483', '#0d31a2'],
       loop: true,
