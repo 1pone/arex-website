@@ -11,7 +11,7 @@ import logoLeXin from '@/images/logos/lexin.png'
 import logoG7 from '@/images/logos/g7.png'
 import logoYeahka from '@/images/logos/yeahka.png'
 
-import { URL_AREX_CONSOLE } from '@/constant'
+import { URL_AREX_CONSOLE, URL_INTRO_VIDEO } from '@/constant'
 
 export function Hero() {
   return (
@@ -47,7 +47,7 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href={URL_AREX_CONSOLE}>Get 6 months free</Button>
-        <Button variant="outline">
+        <Button variant="outline" href={URL_INTRO_VIDEO} target="_blank">
           <svg
             aria-hidden="true"
             className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"
