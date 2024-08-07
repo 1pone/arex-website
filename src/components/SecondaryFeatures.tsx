@@ -134,7 +134,7 @@ export function SecondaryFeatures() {
                       src={feature.img}
                       width={1200}
                       height={800}
-                      className="h-[240px] w-[360px] rounded-lg border border-gray-200 shadow-md sm:h-[300px] sm:w-[450px] xl:h-[360px] xl:w-[480px]"
+                      className="w-[360px] rounded-lg border border-gray-200 shadow-md sm:w-[450px] xl:w-[480px]"
                       alt="feature_image"
                     />
                   </div>
