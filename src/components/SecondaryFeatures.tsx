@@ -77,12 +77,12 @@ export function SecondaryFeatures() {
       className="sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="sticky top-0 z-20 w-full py-10 backdrop-blur">
+        <div className="sticky top-0 z-20 w-full py-6 backdrop-blur">
           <div className="mx-auto max-w-2xl md:text-center">
-            <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="font-display text-2xl tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
               Effortless Testing Solutions for Seamless Operations
             </h2>
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-2 text-lg/7 tracking-tight text-slate-700">
               Streamline your testing process with AREX, the innovative solution
               that replicates real online traffic for effortless and accurate
               API testing.
@@ -100,7 +100,7 @@ export function SecondaryFeatures() {
                 <div className="relative flex h-full items-center justify-center">
                   <div
                     className={clsx(
-                      'animate-wave absolute left-[calc(50%-4rem)] top-[calc(50%-4rem)] z-0 mb-8 h-36 w-36 rounded-full lg:top-[calc(50%-64px)]',
+                      'absolute left-[calc(50%-4rem)] top-[calc(50%-4rem)] z-0 mb-8 h-36 w-36 animate-wave rounded-full lg:top-[calc(50%-64px)]',
                       item.waterWaveColor,
                     )}
                   />

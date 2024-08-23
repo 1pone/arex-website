@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import React, { forwardRef } from 'react'
 
 const baseStyles = {
   solid:
@@ -41,7 +42,11 @@ type ButtonProps = (
       })
   )
 
-export function Button({ className, ...props }: ButtonProps) {
+// eslint-disable-next-line react/display-name
+export const Button = forwardRef<
+  HTMLButtonElement & HTMLAnchorElement,
+  ButtonProps
+>(({ className, ...props }, ref) => {
   props.variant ??= 'solid'
   props.color ??= 'slate'
 
@@ -56,8 +61,8 @@ export function Button({ className, ...props }: ButtonProps) {
   )
 
   return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
+    <button className={className} {...props} ref={ref} />
   ) : (
-    <Link className={className} {...props} />
+    <Link className={className} {...props} ref={ref} />
   )
-}
+})

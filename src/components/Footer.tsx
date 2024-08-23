@@ -7,9 +7,9 @@ import { URL_AREX_DOC } from '@/constant'
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50">
+    <footer className="relative bg-slate-50">
       <Container>
-        <div className="flex flex-col items-center justify-center py-16">
+        <div className="flex flex-col items-center justify-center py-4 sm:py-8 lg:py-16">
           <Logo className="brightness-55 mx-auto h-10 w-auto grayscale filter" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
