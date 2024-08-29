@@ -36,7 +36,7 @@ export default {
       },
       keyframes: {
         'dash-stroke': {
-          '0%': { 'stroke-dashoffset': '383px' },
+          '0%': { 'stroke-dashoffset': '1200px' },
           '100%': { 'stroke-dashoffset': '0px' },
         },
         'water-wave': {
