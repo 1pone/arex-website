@@ -9,10 +9,11 @@ import { Footer } from '@/components/Footer'
 export const metadata: Metadata = {
   title: {
     template: '%s - AREX',
-    default: 'AREX - Replicate Real Traffic Test with Confidence',
+    default: 'AREX - API Test Tool with test case automation',
   },
+  keywords:'api test, test case automation, postman integration, open source, regression test',
   description:
-    'AREX solves the challenges of automated testing by replicating real online traffic to the test environment for automated API testing.',
+    'API Test Tool with test case automation.',
 }
 
 const inter = Inter({

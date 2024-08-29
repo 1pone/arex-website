@@ -6,53 +6,53 @@ import backgroundImage from '@/images/background-faqs.png'
 const faqs = [
   [
     {
-      question: 'Does AREX handle VAT?',
+      question: 'Can AREX support all types of APIs?',
       answer:
-        'Well no, but if you move your company offshore you can probably ignore it.',
+        'AREX primarily supports RESTful APIs, which are the most common type. It also has support for other types, like SOAP and GraphQL, but the level of support may vary depending on the specific API framework. ',
     },
     {
-      question: 'Can I pay for my subscription via purchase order?',
-      answer: 'Absolutely, we are happy to take your money in all forms.',
+      question: 'How does AREX handle sensitive data?',
+      answer: 'AREX provides data masking and redaction capabilities. This allows you to specify sensitive data fields that need to be obfuscated during capture and execution, protecting sensitive information. ',
     },
     {
-      question: 'How do I apply for a job at AREX?',
+      question: ' Does AREX require code modification to be used?',
       answer:
-        'We only hire our customers, so subscribe for a minimum of 6 months and then let’s talk.',
+        'No, AREX is designed to be agent-based, so it doesn\'t require any code changes. The Java agent simply needs to be attached to your application.',
     },
   ],
   [
     {
-      question: 'What was that testimonial about tax fraud all about?',
+      question: 'Does AREX support testing write operations?',
       answer:
-        'AREX is just a software application, ultimately your books are your responsibility.',
+        'Yes, AREX supports testing write operations to databases, message queues, Redis, and other systems. It ensures that the data is validated and cleaned up correctly to avoid contaminating the test environment.',
     },
     {
       question:
-        'AREX sounds horrible but why do I still feel compelled to purchase?',
+        'Can AREX generate test cases in different formats?',
       answer:
-        'This is the power of excellent visual design. You just can’t resist it, no matter how poorly it actually functions.',
+        'Yes, AREX allows you to export test cases in multiple formats, including Postman collections, cURL commands, but it will be provided such as  JUnit tests for easier integration with different testing frameworks.',
     },
     {
       question:
-        'I found other companies called AREX, are you sure you can use this name?',
+        'How does AREX integrate with existing testing frameworks?',
       answer:
-        'Honestly not sure at all. We haven’t actually incorporated or anything, we just thought it sounded cool and made this website.',
+        'AREX will be integrated with popular frameworks like JUnit, TestNG, and Selenium through its API. It allows you to trigger tests, access results, and manage data within your existing workflows. ',
     },
   ],
   [
     {
-      question: 'How do you generate reports?',
+      question: 'How is the performance of AREX?',
       answer:
-        'You just tell us what data you need a report for, and we get our kids to create beautiful charts for you using only the finest crayons.',
+        'AREX has been designed for performance, leveraging technologies like Redis for fast data retrieval and efficient processing. However, the actual performance depends on factors like application size, data volume, and the complexity of your API.',
     },
     {
-      question: 'Can we expect more inventory features?',
-      answer: 'In life it’s really better to never expect anything at all.',
+      question: 'Does AREX offer learning resources?',
+      answer: 'Yes, AREX provides comprehensive documentation, tutorials, and community support to help users get started and utilize the platform effectively. ',
     },
     {
-      question: 'I lost my password, how do I get into my account?',
+      question: 'What is the pricing of AREX?',
       answer:
-        'Send us an email and we will send you a copy of our latest password spreadsheet so you can find your information.',
+        'AREX offers different pricing plans based on the features and usage requirements. You can find detailed information on the price panel or contact our sales team.',
     },
   ],
 ]
