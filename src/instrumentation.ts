@@ -5,5 +5,5 @@ import {
 
 export async function register() {
   const data = await fetchClientDownloadData()
-  setClientDownloadData(data)
+  data && setClientDownloadData(data)
 }
