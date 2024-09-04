@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { BlurDotBg } from '@/lib/blurDotBg'
+import { BlurGradientBg } from '@/lib/BlurGradientBg'
 import { Container } from '@/components/Container'
 import screenshotMainInterface from '@/images/screenshots/main-interface.png'
 import screenshotMainInterfaceNoSidebar from '@/images/screenshots/main-interface-no-sidebar.png'
@@ -43,9 +43,9 @@ export function PrimaryFeatures() {
   )
 
   useEffect(() => {
-    new BlurDotBg({
+    new BlurGradientBg({
       dom: 'features',
-      colors: ['#0d31a2', '#ffb400', '#0c1483', '#0d31a2'],
+      colors: ['#0d31a2', '#2256c7', '#ffb400', '#0c31a2'],
       loop: true,
     })
 
@@ -93,7 +93,7 @@ export function PrimaryFeatures() {
                       className={clsx(
                         'group relative mr-4 rounded-full px-4 py-1 lg:my-2 lg:rounded-xl lg:p-4',
                         selectedIndex === featureIndex
-                          ? 'bg-white backdrop-blur lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
+                          ? 'bg-white backdrop-blur-md lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
                           : 'hover:bg-white/10 lg:hover:bg-white/5',
                       )}
                     >

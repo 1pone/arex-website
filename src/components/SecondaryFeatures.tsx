@@ -77,7 +77,7 @@ export function SecondaryFeatures() {
       className="sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="sticky top-0 z-20 w-full py-6 backdrop-blur">
+        <div className="sticky top-0 z-[100] w-full py-6 backdrop-blur">
           <div className="mx-auto max-w-2xl md:text-center">
             <h2 className="font-display text-2xl tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
               Effortless Testing Solutions for Seamless Operations

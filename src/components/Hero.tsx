@@ -47,8 +47,11 @@ export function Hero() {
         online traffic to the test environment for automated API testing.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button color="blue" href={URL_AREX_CONSOLE}>
-          Get 6 months free
+        <Button
+          color="blue"
+          href={process.env.URL_AREX_CONSOLE || URL_AREX_CONSOLE}
+        >
+          Get 1 year free
         </Button>
         <Button variant="outline" href={URL_INTRO_VIDEO} target="_blank">
           <svg

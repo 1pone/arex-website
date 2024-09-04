@@ -27,8 +27,12 @@ export function CallToAction() {
           <p className="mt-4 text-lg tracking-tight text-white">
             It’s time to take control of your testing processes with AREX.
           </p>
-          <Button href={URL_AREX_CONSOLE} color="white" className="mt-10">
-            Get 6 months free
+          <Button
+            href={process.env.URL_AREX_CONSOLE || URL_AREX_CONSOLE}
+            color="white"
+            className="mt-10"
+          >
+            Get 1 year free
           </Button>
         </div>
       </Container>

@@ -86,14 +86,14 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="py-10">
+    <header className="fixed z-50 w-full bg-white/30 py-4 backdrop-blur-lg">
       <Container>
-        <nav className="relative z-50 flex justify-between">
+        <nav className="relative flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
-            <div className="hidden md:flex md:gap-x-6">
+            <div className="hidden duration-100 md:flex md:gap-x-6 [&_a]:transition-[background-color]">
               <NavLink href="/#features">Features</NavLink>
               <NavLink href={URL_AREX_DOC} target="_blank">
                 Document
@@ -103,7 +103,11 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <Button href={URL_AREX_CONSOLE} target="_blank" color="blue">
+            <Button
+              href={process.env.URL_AREX_CONSOLE || URL_AREX_CONSOLE}
+              target="_blank"
+              color="blue"
+            >
               <span>
                 Get started <span className="hidden lg:inline">today</span>
               </span>
