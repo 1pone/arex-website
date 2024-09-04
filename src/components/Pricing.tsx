@@ -31,7 +31,7 @@ export function Pricing() {
             name="Starter"
             price="$0"
             description="Good for anyone who is self-employed and just getting started."
-            href={process.env.URL_AREX_CONSOLE || URL_AREX_CONSOLE}
+            href={URL_AREX_CONSOLE}
             features={['100G Traffic', '10 Member user limit', '1 Year trial']}
           />
           <SmallBusinessPlan />
