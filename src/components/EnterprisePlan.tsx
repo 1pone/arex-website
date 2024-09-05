@@ -8,7 +8,6 @@ export default function EnterprisePlan() {
       name="Enterprise"
       price="Custom"
       description="For even the biggest enterprise companies."
-      href="/register"
       onClick={() => {
         const email = 'arex.test.com@gmail.com'
         const subject = encodeURIComponent(

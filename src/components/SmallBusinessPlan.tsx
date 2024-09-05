@@ -9,7 +9,6 @@ export default function SmallBusinessPlan() {
       name="Small business"
       price="Custom"
       description="Perfect for small / medium sized businesses."
-      href="/register"
       onClick={() => {
         const email = 'arex.test.com@gmail.com'
         const subject = encodeURIComponent(
