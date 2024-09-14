@@ -14,7 +14,7 @@ export default function ClientPage() {
   const { action } = useParams()
 
   const openAREX = useCallback(() => {
-    window.open(`arex://auth0/callback?code={params.get('code')}`)
+    window.open(`arex://auth0/callback?code=${params.get('code')}`)
   }, [params])
 
   function handleCopyToken() {
