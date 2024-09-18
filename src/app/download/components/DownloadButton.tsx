@@ -32,12 +32,43 @@ export function DownloadButton(props: DownloadButtonProps) {
   const [arch, setArch] = useState(Arch.WindowsX64)
 
   async function detectArch() {
-    const arch: { architecture: string; platform: string; mobile: boolean } =
-      // @ts-ignore
-      await navigator.userAgentData.getHighEntropyValues(['architecture'])
-    if (arch.platform === 'macOS')
-      setArch(arch.architecture === 'arm' ? Arch.MacOSArm64 : Arch.MacOSX64)
-    else setArch(Arch.WindowsX64)
+    let architecture = 'unknown'
+    let platform = 'unknown'
+    let mobile = false
+
+    // @ts-ignore
+    if (navigator.userAgentData) {
+      try {
+        const highEntropyValues =
+          // @ts-ignore
+          await navigator.userAgentData.getHighEntropyValues([
+            'architecture',
+            'platform',
+            'mobile',
+          ])
+        architecture = highEntropyValues.architecture
+        platform = highEntropyValues.platform
+        mobile = highEntropyValues.mobile
+      } catch (error) {
+        console.error('Error fetching high entropy values:', error)
+      }
+    } else {
+      const userAgent = navigator.userAgent.toLowerCase()
+      if (userAgent.includes('mac')) {
+        platform = 'macOS'
+        architecture = userAgent.includes('arm') ? 'arm' : 'x86'
+      } else if (userAgent.includes('win')) {
+        platform = 'Windows'
+        architecture = 'x86' // Assuming x86 for simplicity
+      }
+      mobile = /mobile|android|iphone|ipad/.test(userAgent)
+    }
+
+    if (platform === 'macOS') {
+      setArch(architecture === 'arm' ? Arch.MacOSArm64 : Arch.MacOSX64)
+    } else {
+      setArch(Arch.WindowsX64)
+    }
   }
 
   useEffect(() => {
