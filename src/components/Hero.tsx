@@ -14,8 +14,8 @@ import { URL_AREX_CONSOLE, URL_INTRO_VIDEO } from '@/constant'
 
 export function Hero() {
   return (
-    <Container className="pb-16 pt-20 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+    <Container className="pb-16 pt-20 text-center lg:pt-28">
+      <h1 className="mx-auto max-w-4xl pt-20 font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         API Test Tool with
         <span className="mt-4 block">
           Test Case{' '}
@@ -60,7 +60,7 @@ export function Hero() {
           <span className="ml-3">Watch video</span>
         </Button>
       </div>
-      <div className="mt-36 lg:mt-44">
+      <div className="mt-20 lg:mt-24">
         <p className="font-display text-base text-slate-900">
           Trusted by many companies
         </p>

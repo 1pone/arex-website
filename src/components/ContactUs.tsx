@@ -6,7 +6,7 @@ import { ReactNode } from 'react'
 
 export default function ContactUs() {
   return (
-    <div className="fixed bottom-16 right-2 z-[100] m-4 sm:right-2">
+    <div className="fixed bottom-20 right-2 z-[100] m-4 sm:right-2">
       <Popover className="relative">
         <PopoverButton
           as={Button}

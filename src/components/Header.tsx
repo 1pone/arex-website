@@ -76,6 +76,8 @@ function MobileNavigation() {
       >
         <MobileNavLink href="/#features">Features</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
+        <MobileNavLink href="/#faq">FAQ</MobileNavLink>
+        <MobileNavLink href={URL_AREX_DOC}>Document</MobileNavLink>
         <MobileNavLink href="/download">Download</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
         <MobileNavLink href="/login">Sign in</MobileNavLink>
@@ -96,18 +98,17 @@ export function Header() {
               </Link>
               <div className="hidden duration-100 md:flex md:gap-x-6 [&_a]:transition-[background-color]">
                 <NavLink href="/#features">Features</NavLink>
+                <NavLink href="/#pricing">Pricing</NavLink>
+                <NavLink href="/#faq">FAQ</NavLink>
                 <NavLink href={URL_AREX_DOC} target="_blank">
                   Document
                 </NavLink>
-                <NavLink href="/#pricing">Pricing</NavLink>
                 <NavLink href="/download">Download</NavLink>
               </div>
             </div>
             <div className="flex items-center gap-x-5 md:gap-x-8">
               <Button href={URL_AREX_CONSOLE} target="_blank" color="blue">
-                <span>
-                  Get started <span className="hidden lg:inline">today</span>
-                </span>
+                <span>Get started</span>
               </Button>
               <div className="-mr-1 md:hidden">
                 <MobileNavigation />

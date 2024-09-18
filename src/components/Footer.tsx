@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="relative bg-slate-50">
       <Container>
-        <div className="flex flex-col items-center justify-center py-4 sm:py-8 lg:py-16">
+        <div className="flex flex-col items-center justify-center py-4 sm:py-4 lg:py-8">
           <Logo className="brightness-55 mx-auto h-10 w-auto grayscale filter" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
@@ -22,7 +22,7 @@ export function Footer() {
             </div>
           </nav>
         </div>
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div className="flex flex-col items-center border-t border-slate-400/10 py-6 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <Link
               href="https://x.com/AREX_Test"

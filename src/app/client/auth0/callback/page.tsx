@@ -1,30 +1,27 @@
 'use client'
 
 import { Button } from '@/components/Button'
-import { useParams, useSearchParams } from 'next/navigation'
 import { useCallback, useEffect } from 'react'
 import { Text } from '@/components/text'
 import Image from 'next/image'
 import arexLogo from '@/images/logos/logo.png'
 import { Link } from '@/components/Link'
 import { copyToClipboard } from '@/lib/copyToClipboard'
+import { PageProps } from '@/types'
 
-export default function ClientPage() {
-  const params = useSearchParams()
-  const { action } = useParams()
-
+export default function Auth0Callback({ searchParams }: PageProps) {
   const openAREX = useCallback(() => {
-    window.open(`arex://auth0/callback?code=${params.get('code')}`)
-  }, [params])
+    window.open(`arex://auth0/callback?code=${searchParams.code}`)
+  }, [searchParams])
 
   function handleCopyToken() {
-    const code = params.get('code')
+    const code = searchParams.code
     code && copyToClipboard(code)
   }
 
   useEffect(() => {
-    openAREX()
-  }, [])
+    window.open(`arex://auth0/callback?code=${searchParams.code}`)
+  }, [searchParams])
 
   return (
     <div className="flex flex-col items-center justify-center p-8">
