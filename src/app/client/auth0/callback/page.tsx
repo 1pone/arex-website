@@ -16,6 +16,7 @@ export default function Auth0Callback({ searchParams }: PageProps) {
 
   function handleCopyToken() {
     const code = searchParams.code
+    console.log('code', code)
     code && copyToClipboard(code)
   }
 
