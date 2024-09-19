@@ -7,21 +7,21 @@ import Image from 'next/image'
 import arexLogo from '@/images/logos/logo.png'
 import { Link } from '@/components/Link'
 import { copyToClipboard } from '@/lib/copyToClipboard'
-import { PageProps } from '@/types'
+import { useSearchParams } from 'next/navigation'
 
-export default function Auth0Callback({ searchParams }: PageProps) {
+export default function Auth0Callback() {
+  const searchParams = useSearchParams()
   const openAREX = useCallback(() => {
-    window.open(`arex://auth0/callback?code=${searchParams.code}`)
+    window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
   }, [searchParams])
 
   const handleCopyToken = useCallback(() => {
-    const code = searchParams.code
-    console.log(searchParams)
+    const code = searchParams.get('code')
     code && copyToClipboard(code)
   }, [searchParams])
 
   useEffect(() => {
-    window.open(`arex://auth0/callback?code=${searchParams.code}`)
+    window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
   }, [searchParams])
 
   return (
