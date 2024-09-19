@@ -47,3 +47,5 @@ export default async function Download() {
     </div>
   )
 }
+
+export const dynamic = 'force-dynamic'
