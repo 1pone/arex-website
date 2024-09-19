@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { instrumentationHook: true }, // https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
+  // experimental: { instrumentationHook: true }, // https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
 }
 
 module.exports = nextConfig

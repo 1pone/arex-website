@@ -6,6 +6,7 @@ import { getClientDownloadData } from '@/app/download/actions'
 
 export default async function Download() {
   const clientDownloadData = await getClientDownloadData()
+  console.log('clientDownloadData', clientDownloadData)
 
   return (
     <div className="flex flex-col justify-around px-8 py-4 sm:flex-row">
@@ -21,7 +22,9 @@ export default async function Download() {
           <Text>Version: {clientDownloadData?.tag_name}</Text>
           <Text>
             Release date:{' '}
-            {new Date(clientDownloadData?.published_at).toLocaleDateString()}{' '}
+            {new Date(
+              clientDownloadData?.published_at || '',
+            ).toLocaleDateString()}{' '}
           </Text>
           <TextLink href={clientDownloadData?.html_url || '#'} target="_blank">
             Release notes ➚
