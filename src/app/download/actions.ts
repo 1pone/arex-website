@@ -80,11 +80,14 @@ const clientDownloadData = new GlobalRef<ClientDownloadUrlData | undefined>(
   'clientDownloadData',
 )
 
+export async function syncClientDownloadData() {
+  clientDownloadData.value = await fetchClientDownloadData()
+  return clientDownloadData.value
+}
+
 export async function getClientDownloadData(): Promise<
   ClientDownloadUrlData | undefined
 > {
-  if (!clientDownloadData.value) {
-    clientDownloadData.value = await fetchClientDownloadData()
-  }
+  if (!clientDownloadData.value) return await syncClientDownloadData()
   return clientDownloadData.value
 }
