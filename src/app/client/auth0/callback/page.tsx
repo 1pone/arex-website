@@ -14,11 +14,11 @@ export default function Auth0Callback({ searchParams }: PageProps) {
     window.open(`arex://auth0/callback?code=${searchParams.code}`)
   }, [searchParams])
 
-  function handleCopyToken() {
+  const handleCopyToken = useCallback(() => {
     const code = searchParams.code
-    console.log('code', code)
+    console.log(searchParams)
     code && copyToClipboard(code)
-  }
+  }, [searchParams])
 
   useEffect(() => {
     window.open(`arex://auth0/callback?code=${searchParams.code}`)
