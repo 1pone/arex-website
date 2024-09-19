@@ -1,3 +1,4 @@
+// https://github.com/vercel/next.js/discussions/15054#discussioncomment-658138
 export class GlobalRef<T> {
     private readonly sym: symbol;
 
