@@ -21,7 +21,8 @@ export default function Auth0Callback() {
   }, [searchParams])
 
   useEffect(() => {
-    window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
+    if (!searchParams.get('error'))
+      window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
   }, [searchParams])
 
   return (
@@ -34,13 +35,23 @@ export default function Auth0Callback() {
         className="m-4 drop-shadow-xl"
       />
 
-      <Text className="p-4 font-semibold">Redirecting to AREX...</Text>
+      {searchParams.get('error') ? (
+        <>
+          <Text className="text-lg font-semibold">
+            {decodeURIComponent(searchParams.get('error_description') || '')}
+          </Text>
+        </>
+      ) : (
+        <>
+          <Text className="p-4 font-semibold">Redirecting to AREX...</Text>
 
-      <Button onClick={openAREX}> Open AREX Client </Button>
+          <Button onClick={openAREX}> Open AREX Client </Button>
 
-      <Link href="#" onClick={handleCopyToken} className="mt-4">
-        Copy authorization token
-      </Link>
+          <Link href="#" onClick={handleCopyToken} className="mt-4">
+            Copy authorization token
+          </Link>
+        </>
+      )}
     </div>
   )
 }
