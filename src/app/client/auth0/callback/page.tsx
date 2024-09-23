@@ -3,8 +3,6 @@
 import { Button } from '@/components/Button'
 import { useCallback, useEffect } from 'react'
 import { Text } from '@/components/text'
-import Image from 'next/image'
-import arexLogo from '@/images/logos/logo.png'
 import { Link } from '@/components/Link'
 import { copyToClipboard } from '@/lib/copyToClipboard'
 import { useSearchParams } from 'next/navigation'
@@ -26,15 +24,7 @@ export default function Auth0Callback() {
   }, [searchParams])
 
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <Image
-        src={arexLogo}
-        alt="arex-logo"
-        width={128}
-        height={128}
-        className="m-4 drop-shadow-xl"
-      />
-
+    <>
       {searchParams.get('error') ? (
         <>
           <Text className="text-lg font-semibold">
@@ -52,6 +42,6 @@ export default function Auth0Callback() {
           </Link>
         </>
       )}
-    </div>
+    </>
   )
 }
