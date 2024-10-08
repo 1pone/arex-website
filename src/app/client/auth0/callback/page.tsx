@@ -9,19 +9,38 @@ import { useSearchParams } from 'next/navigation'
 
 export default function Auth0Callback() {
   const searchParams = useSearchParams()
-  const openAREX = useCallback(() => {
-    window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
-  }, [searchParams])
+  const code = searchParams.get('code')
+  const state = searchParams.get('state')
+  const error = searchParams.get('error')
+
+  const openAREX = () => {
+    {
+      const url = new URL('arex://auth0/callback')
+      code && url.searchParams.append('code', code)
+      state && url.searchParams.append('state', state)
+
+      window.open(url.toString())
+    }
+  }
 
   const handleCopyToken = useCallback(() => {
-    const code = searchParams.get('code')
-    code && copyToClipboard(code)
+    if (code) {
+      if (!state) {
+        // 兼容旧版 electron auth0 登录逻辑
+        copyToClipboard(code)
+      } else {
+        // 新版 auth0-spa-js 登录逻辑
+        const sp = new URLSearchParams()
+        sp.append('code', code)
+        sp.append('state', state)
+        copyToClipboard(sp.toString())
+      }
+    }
   }, [searchParams])
 
   useEffect(() => {
-    if (!searchParams.get('error'))
-      window.open(`arex://auth0/callback?code=${searchParams.get('code')}`)
-  }, [searchParams])
+    if (!error) openAREX()
+  }, [])
 
   return (
     <>
