@@ -23,7 +23,7 @@ export default function Auth0Callback() {
     }
   }
 
-  const handleCopyToken = useCallback(() => {
+  const handleCopyParams = useCallback(() => {
     if (code) {
       if (!state) {
         // 兼容旧版 electron auth0 登录逻辑
@@ -56,8 +56,8 @@ export default function Auth0Callback() {
 
           <Button onClick={openAREX}> Open AREX Client </Button>
 
-          <Link href="#" onClick={handleCopyToken} className="mt-4">
-            Copy authorization token
+          <Link href="#" onClick={handleCopyParams} className="mt-4">
+            Copy authorization params
           </Link>
         </>
       )}
