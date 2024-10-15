@@ -5,15 +5,16 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
     template: '%s - AREX',
     default: 'AREX - API Test Tool with test case automation',
   },
-  keywords:'api test, test case automation, postman integration, open source, regression test',
-  description:
-    'API Test Tool with test case automation.',
+  keywords:
+    'api test, test case automation, postman integration, open source, regression test',
+  description: 'API Test Tool with test case automation.',
 }
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
+      {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
     </html>
   )
 }
