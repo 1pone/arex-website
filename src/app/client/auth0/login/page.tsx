@@ -3,9 +3,13 @@
 import { Text } from '@/components/text'
 import { Button } from '@/components/Button'
 import { useEffect } from 'react'
+import { sendGAEvent } from '@next/third-parties/google'
 
 export default function Login() {
-  const openAREX = () => window.open(`arex://auth0/login`)
+  const openAREX = () => {
+    window.open(`arex://auth0/login`)
+    sendGAEvent({ event: 'clientLogin' })
+  }
 
   useEffect(() => {
     openAREX()

@@ -7,11 +7,10 @@ import {
   DropdownItem,
   DropdownMenu,
 } from '@/components/Dropdown'
-import clsx from 'clsx'
 import ChevronDownIcon from '@/components/icons/chevron-down'
 import { UrlAsset } from '@/app/download/actions'
 import { useEffect, useMemo, useState } from 'react'
-
+import { sendGAEvent } from '@next/third-parties/google'
 type DownloadButtonProps = {
   assets?: UrlAsset[]
 }
@@ -109,7 +108,10 @@ export function DownloadButton(props: DownloadButtonProps) {
     const downloadUrl = executableFile?.find(
       (file) => file.arch_type === arch,
     )?.browser_download_url
-    if (downloadUrl) window.open(downloadUrl, '_black')
+    if (downloadUrl) {
+      window.open(downloadUrl, '_black')
+      sendGAEvent({ event: 'downloadClient', value: Arch[arch] })
+    }
   }
 
   return (

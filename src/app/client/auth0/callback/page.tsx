@@ -6,6 +6,7 @@ import { Text } from '@/components/text'
 import { Link } from '@/components/Link'
 import { copyToClipboard } from '@/lib/copyToClipboard'
 import { useSearchParams } from 'next/navigation'
+import { sendGAEvent } from '@next/third-parties/google'
 
 export default function Auth0Callback() {
   const searchParams = useSearchParams()
@@ -20,6 +21,7 @@ export default function Auth0Callback() {
       state && url.searchParams.append('state', state)
 
       window.open(url.toString())
+      sendGAEvent({ event: 'clientCallback' })
     }
   }
 

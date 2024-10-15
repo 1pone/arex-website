@@ -5,6 +5,7 @@ import { Button } from '@/components/Button'
 import { useEffect } from 'react'
 import { PageProps } from '@/types'
 import { useSearchParams } from 'next/navigation'
+import { sendGAEvent } from '@next/third-parties/google'
 
 export default function Login({ params }: PageProps) {
   const searchParams = useSearchParams()
@@ -14,8 +15,8 @@ export default function Login({ params }: PageProps) {
       url.searchParams.set(key, value)
     })
 
-    console.log('open link: ', url.toString())
     window.open(url.toString())
+    sendGAEvent({ event: 'clientInvite', value: params.to })
   }
 
   useEffect(() => {
